@@ -1,4 +1,4 @@
-# The Emergence of Essential Sparsity in\\Large Pre-trained Models: The Weights that Matter
+# The Emergence of Essential Sparsity in Large Pre-trained Models: The Weights that Matter
 
 ### Abstract
 Large pre-trained transformers are show-stealer in modern-day deep learning, and
