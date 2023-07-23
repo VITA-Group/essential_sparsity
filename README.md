@@ -29,5 +29,84 @@ properties than supervised learning (SL).
 
 <img width="827" alt="image" src="https://github.com/VITA-Group/essential_sparsity/assets/6660499/a1e435e7-3082-42ec-9fc9-588a8084fa27">
 
+# Installation
+
+Our implementation is based on [Huggingface repo](https://github.com/huggingface/transformers). Details are referred to README [here](https://github.com/TAMU-VITA/BERT-Tickets/blob/master/transformers-master/README.md). 
+
+### With pip
+
+First you need to install one of, or both, TensorFlow 2.0 and PyTorch.
+Please refer to [TensorFlow installation page](https://www.tensorflow.org/install/pip#tensorflow-2.0-rc-is-available) and/or [PyTorch installation page](https://pytorch.org/get-started/locally/#start-locally) regarding the specific install command for your platform.
+
+When TensorFlow 2.0 and/or PyTorch has been installed, 🤗 Transformers can be installed using pip as follows:
+
+```bash
+pip install transformers
+```
+
+
+#### Glue task:
+
+```shell
+python -u bert_analysis.py
+	   --output_dir tmp/mnli 
+	   --logging_steps <ADD_VALUE> 
+	   --task_name MNLI
+     --do_lower_case
+	   --data_dir glue_data/MNLI 
+	   --model_type bert 
+	   --model_name_or_path bert-base-uncased 
+	   --max_seq_length  <ADD_VALUE> 
+	   --learning_rate 2e-5 
+	   --num_train_epochs  <ADD_VALUE>  
+	   --overwrite_output_dir 
+	   --evaluate_during_training 
+	   --save_steps  <ADD_VALUE> 
+	   --eval_all_checkpoints 
+	   --seed  <ADD_VALUE> 
+```
+
+#### SQuAD task:
+
+```shell
+python -u squad_analysis.py 
+	   --output_dir <ADD_VALUE> 
+	   --model_type bert 
+	   --model_name_or_path bert-base-uncased 
+       --do_train 
+       --do_eval 
+       --do_lower_case 
+       --train_file SQuAD/train-v1.1.json 
+       --predict_file SQuAD/dev-v1.1.json 
+       --per_gpu_train_batch_size <ADD_VALUE>  
+       --learning_rate 3e-5 
+       --num_train_epochs <ADD_VALUE>  
+       --max_seq_length <ADD_VALUE>  
+       --doc_stride 128 
+       --evaluate_during_training 
+       --eval_all_checkpoints 
+       --overwrite_output_dir 
+       --logging_steps <ADD_VALUE>  
+       --save_steps <ADD_VALUE>  
+       --seed <ADD_VALUE> 
+```
+
+## Citation
+
+If you use this code for your research, please cite our paper:
+
+```
+@article{jaiswal2023emergence,
+  title={The Emergence of Essential Sparsity in Large Pre-trained Models: The Weights that Matter},
+  author={Jaiswal, Ajay and Liu, Shiwei and Chen, Tianlong and Wang, Zhangyang},
+  journal={arXiv preprint arXiv:2306.03805},
+  year={2023}
+}
+```
+
+
+
+
+
 
 
